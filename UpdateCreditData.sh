@@ -2,12 +2,12 @@
  
  # Download host and team data from BOINC projects on the Gridcoin whitelist (and greylist)
 #
-# bash UpdateDatabaseFiles.sh [debug]
+# bash UpdateCreditData.sh [debug]
 #
 # [debug]			:	Can specify debug to enable progress bars
 #
 # @author nexus-prime
-# @version 1.6
+# @version 2.0
  
 # Respond to help flag
  if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
@@ -15,10 +15,8 @@
 
 # Download host and team data from BOINC projects on the Gridcoin whitelist (and greylist)
 #
-# bash UpdateDatabaseFiles.sh [Project Type] [debug]
+# bash UpdateCreditData.sh [Project Type] [debug]
 # 
-# [Project Type]	:	Choose which project types to get (cpu/gpu/all)
-#							Default is all
 #
 # [debug]			:	Can specify debug to enable progress bars
 #
@@ -32,21 +30,18 @@ fi
  # Handle bad inputs
  if [ $# -lt 1 ]; then
 	PB=''
-fi
-
- 
- 
- if [ $1 == "-debug" ] || [ $1 == "debug" ] || [ $1 == "-v" ]; then
-	PB='--show-progress'
  else
-	PB=''
- fi
-	  
+	 if [ $1 == "-debug" ] || [ $1 == "debug" ] || [ $1 == "-v" ]; then
+		PB='--show-progress'
+	 else
+		PB=''
+	 fi
+  fi
  TotProj=23
 
- 
+ echo "Start Delay"
 
- 
+ echo "End Delay"
 # Setup for downloading
 rm -f fin.temp
 touch fin.temp
