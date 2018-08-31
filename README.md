@@ -1,27 +1,32 @@
 There is an [online version](http://grcquickmag.hopto.org) with limited features
 
 
-CPU_QuickMag and GPU_QuickMag are methods for determining the approximate performance of a given CPU/GPU on all Gridcoin whitelisted projects.
+CPU_DeltaMag and GPU_DeltaMag are methods for determining the approximate performance of a given CPU/GPU on all Gridcoin whitelisted projects. These methods are a modified version of CPU_QuickMag.sh and GPU_QuickMag.sh that now use the Total
+Credit Delta (TCD) method of determining the Magnitude and GRC/day for a specified CPU or GPU.
+
 Requires: python
 
 **Steps for running code:**
 
-    bash UpdateDatabaseFiles.sh cpu
+    bash UpdateCreditData.sh 
+    
+** Wait at least 24 hours **
+    
+    bash UpdateCreditData.sh
+
+Then when databases have been built
     
     bash CPU_QuickMag.sh [CPUid] [#hosts] [output]
     
-or 
-    
-    bash UpdateDatabaseFiles.sh gpu
+or  
     
     bash GPU_QuickMag.sh [GPUid] [#hosts] [output]
  
 Script details:
 
 __________________________________________________________________________________________________________________
-**bash UpdateDatabaseFiles.sh [Project Type] [debug]**
+**bash UpdateCreditData.sh [debug]**
     
-    [Project Type]	:	Choose which project types to get data for (cpu/gpu/all)
     [debug]		:	Can specify debug to enable progress bars
     
 UpdateDatabaseFiles.sh downloads host and team data from the various BOINC projects on the Gridcoin whitlist
@@ -30,7 +35,7 @@ and saves the needed data to the local computer.
 __________________________________________________________________________________________________________________
 
 
-**bash CPU_QuickMag.sh [CPUid] [#hosts] [output]**
+**bash CPU_DeltaMag.sh [CPUid] [#hosts] [output]**
 
     [CPUid]		:	CPU id string e.g. 'i7-6700 ' (check CPUlist.data for more examples)
     
@@ -50,7 +55,7 @@ Note that spaces need to be preserved, for example 'i7-6700' will return a mix o
 __________________________________________________________________________________________________________________
 
 
-**bash GPU_QuickMag.sh [GPUid] [#hosts] [output]**
+**bash GPU_DeltaMag.sh [GPUid] [#hosts] [output]**
 
     [GPUid]		:	GPU id string e.g. 'GTX 1080 Ti|1|' (check GPUlist.data for more examples)
     
@@ -99,8 +104,6 @@ ________________________________________________________________________________
 
 		lhc		Lhc@home Classic
 		
-		asteroids 	Asteroids@home
-
 		rosetta  	Rosetta@home
 
 		yoyo 		Yoyo@home
@@ -124,3 +127,5 @@ ________________________________________________________________________________
 		seti 		Seti@home
 		
 		gpug		GPUgrid
+
+		asteroids 	Asteroids@home
