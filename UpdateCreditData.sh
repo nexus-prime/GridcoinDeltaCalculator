@@ -39,9 +39,6 @@ fi
   fi
  TotProj=23
 
- echo "Start Delay"
-
- echo "End Delay"
 # Setup for downloading
 rm -f fin.temp
 touch fin.temp
@@ -58,9 +55,9 @@ fi
 # Clear Old Files 
 
 rm -rf ./HostFiles.old/
-mv ./HostFiles/ ./HostFiles.old/
+mv ./HostFiles/ ./HostFiles.old/ 2>/dev/null
 rm -rf ./TeamFiles.old/
-mv ./TeamFiles/ ./TeamFiles.old/
+mv ./TeamFiles/ ./TeamFiles.old/ 2>/dev/null
 rm -rf ./HostDeltaFiles/
 
  mkdir -p TeamFiles
@@ -172,6 +169,14 @@ if [ -z "$PB" ];then
  
  wait
 echo " "
+
+echo "All Downloads Complete"
+echo ""
+echo "Checking for old host and team data..."
+
+if [ -d "./HostFiles.old/" ] && [ -d "./TeamFiles.old/" ]; then
+echo "Old data directory located, proceeding with TCD calculations..."
+
  # Mag Calculations
  echo "gSETI"
 (bash database2delta.sh gSETI)&
@@ -220,7 +225,11 @@ echo "cYOYO"
 echo "cWCG"
 (bash database2delta.sh cWCG) 
 
+else
+	echo "Old files missing! Cannot proceed with TCD calculations"
+	echo "Run this script again at least 24 hours from now."
 
+ fi
  
  wait
  
