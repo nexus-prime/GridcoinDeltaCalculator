@@ -10,11 +10,11 @@ Requires: python
 
     bash UpdateCreditData.sh 
     
-** Wait at least 24 hours **
+Wait at least 24 hours!
     
     bash UpdateCreditData.sh
 
-Then when databases have been built
+Then when databases have been built, you can search for the performance of the desired CPU or GPU
     
     bash CPU_QuickMag.sh [CPUid] [#hosts] [output]
     
