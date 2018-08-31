@@ -1,4 +1,4 @@
-**This project is still beta! You may encounter error messages until I finish sometime in the next week or two.**
+**This project is still beta! I'm working on making it easier to use**
 
 
 CPU_DeltaMag and GPU_DeltaMag are methods for determining the approximate performance of a given CPU/GPU on all Gridcoin whitelisted projects. These methods are a modified version of CPU_QuickMag.sh and GPU_QuickMag.sh that now use the Total
