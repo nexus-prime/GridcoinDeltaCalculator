@@ -172,34 +172,59 @@ if [ -z "$PB" ];then
  
  wait
 echo " "
- # Cleanup
- (bash database2delta.sh cODLK1)& 
- (bash database2delta.sh cSRBASE)& 
- (bash database2delta.sh cYAFU)& 
- (bash database2delta.sh cTNGRID)& 
- (bash database2delta.sh cVGTU)& 
- (bash database2delta.sh cNFS)& 
- (bash database2delta.sh cNUMF)& 
- (bash database2delta.sh cUNIVERSE)& 
- (bash database2delta.sh cCSG)& 
- (bash database2delta.sh cCOSMOLOGY)& 
- (bash database2delta.sh cLHC)& 
- (bash database2delta.sh cROSETTA)& 
- (bash database2delta.sh cYOYO)& 
- (bash database2delta.sh cWCG)& 
+ # Mag Calculations
+ echo "gSETI"
+(bash database2delta.sh gSETI)&
+ echo "gAMICABLE"
+(bash database2delta.sh gAMICABLE) 
+echo "gCOLLATZ"
+(bash database2delta.sh gCOLLATZ) 
+#(bash database2delta.sh gEINSTEIN)& 
+echo "gENIGMA"
+(bash database2delta.sh gENIGMA) 
+echo "gGPUG"
+(bash database2delta.sh gGPUG) 
+echo "gMW"
+(bash database2delta.sh gMW) 
+echo "gPGRID"
+(bash database2delta.sh gPGRID) 
+echo "gASTEROIDS"
+bash database2delta.sh gASTEROIDS
  
- (bash database2delta.sh gAMICABLE)& 
- (bash database2delta.sh gCOLLATZ)& 
- #(bash database2delta.sh gEINSTEIN)& 
- (bash database2delta.sh gENIGMA)& 
- (bash database2delta.sh gGPUG)& 
- (bash database2delta.sh gMW)& 
- (bash database2delta.sh gPGRID)& 
- (bash database2delta.sh gSETI)& 
-  bash database2delta.sh gASTEROIDS
+echo "cNFS"
+(bash database2delta.sh cNFS)& 
+ echo "cODLK1"
+(bash database2delta.sh cODLK1) 
+echo "cSRBASE"
+(bash database2delta.sh cSRBASE) 
+echo "cYAFU"
+(bash database2delta.sh cYAFU) 
+echo "cTNGRID"
+(bash database2delta.sh cTNGRID) 
+echo "cVGTU"
+(bash database2delta.sh cVGTU) 
+echo "cNUMF"
+(bash database2delta.sh cNUMF) 
+echo "cUNIVERSE"
+(bash database2delta.sh cUNIVERSE) 
+echo "cCSG"
+(bash database2delta.sh cCSG) 
+echo "cCOSMOLOGY"
+(bash database2delta.sh cCOSMOLOGY) 
+echo "cLHC"
+(bash database2delta.sh cLHC) 
+echo "cROSETTA"
+(bash database2delta.sh cROSETTA) 
+echo "cYOYO"
+(bash database2delta.sh cYOYO) 
+echo "cWCG"
+(bash database2delta.sh cWCG) 
+
+
  
  wait
  
+ # Clean Up
 rm fin.temp
 rm -f *.gz
 rm -f ./HostFiles/*.gz
