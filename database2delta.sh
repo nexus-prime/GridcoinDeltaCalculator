@@ -5,13 +5,12 @@
 if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
   echo "Usage: `basename $0` 
 
-# You must run 'bash UpdateDatabaseFiles.sh' before running this program to download the necessary data. 
+# You must run 'bash UpdateCreditData.sh' twice at least 24 hours appart before running 
+# this program to download the necessary data. 
 #
-# bash GPU_QuickMag.sh [GPUid] [#hosts] [output]
+# bash GridcoinDeltaCalculator.sh [ProjectFileName]
 # 
-# [GPUid]	:	GPU id string e.g. 'GTX 1080 Ti|1|' (check GPUlist.data for more examples)
-# [#hosts]	:	number of hosts to return data for
-# [output]	:	save output to file name (optional)
+# [ProjectFileName]		:	Filename corresponding to desired project
 #
 # Requires: python
  "
