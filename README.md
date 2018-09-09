@@ -30,7 +30,8 @@ ________________________________________________________________________________
     [debug]		:	Can specify debug to enable progress bars
     
 UpdateDatabaseFiles.sh downloads host and team data from the various BOINC projects on the Gridcoin whitlist
-and saves the needed data to the local computer. 
+and saves the needed data to the local computer. It then uses database2delta.sh to calculate maginuted using the
+TCD method.
 
 __________________________________________________________________________________________________________________
 
@@ -43,7 +44,7 @@ ________________________________________________________________________________
     
     [output]	:	save output to file name (optional)
     
-CPU_QuickMag.sh reads the host and team data files to find the magnitude of the top [#hosts] hosts using the specified CPU model.
+CPU_QuickMag.sh reads the host data files to find the magnitude of the top [#hosts] hosts using the specified CPU model.
 The data can be saved to a specified output file or printed to the terminal if [output] is not specified.
 __________________________________________________________________________________________________________________
 
@@ -63,7 +64,7 @@ ________________________________________________________________________________
     
     [output]	:	save output to file name (optional)
     
-GPU_QuickMag.sh reads the host and team data files to find the magnitude of the top [#hosts] hosts using a single card 
+GPU_QuickMag.sh reads the host data files to find the magnitude of the top [#hosts] hosts using a single card 
 of the specified GPU model.
 The data can be saved to a specified output file or printed to the terminal if [output] is not specified.
 __________________________________________________________________________________________________________________
