@@ -6,7 +6,7 @@ Credit Delta (TCD) method of determining the Magnitude and GRC/day for a specifi
 
 Requires: python
 
-**Steps for running code:**
+# Steps for running code:
 
     bash UpdateCreditData.sh 
     
@@ -21,8 +21,10 @@ Then when databases have been built, you can search for the performance of the d
 or  
     
     bash GPU_QuickMag.sh [GPUid] [#hosts] [output]
+
  
-Script details:
+ 
+# Script details:
 
 __________________________________________________________________________________________________________________
 **bash UpdateCreditData.sh [debug]**
