@@ -34,6 +34,14 @@ and saves the needed data to the local computer. It then uses database2delta.sh 
 TCD method.
 
 __________________________________________________________________________________________________________________
+**bash database2delta.sh [ProjectFileName]**
+    
+    [ProjectFileName]		:	Filename corresponding to desired project
+    
+database2delta.sh uses already downloaded host and team data to calculate which hosts have participated between
+the current host database and the old host database. The magnitude for each host is calculated using TCD.
+
+__________________________________________________________________________________________________________________
 
 
 **bash CPU_DeltaMag.sh [CPUid] [#hosts] [output]**
