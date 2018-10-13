@@ -1,4 +1,4 @@
-**This project is still beta! I am working on making it easier to use**
+There is an [online version](http://grcquickmag.hopto.org) with limited features
 
 
 CPU_DeltaMag and GPU_DeltaMag are methods for determining the approximate performance of a given CPU/GPU on all Gridcoin whitelisted projects. These methods are a modified version of CPU_QuickMag.sh and GPU_QuickMag.sh that now use the Total
@@ -14,7 +14,7 @@ Wait at least 24 hours!
     
     bash UpdateCreditData.sh
 
-Then when databases have been built, you can search for the performance of the desired CPU or GPU
+
     
     bash CPU_QuickMag.sh [CPUid] [#hosts] [output]
     
@@ -120,6 +120,8 @@ ________________________________________________________________________________
 		yoyo 		Yoyo@home
 
 		wcg		World Community Grid 
+		
+		dhep		Distributed Hardware Evolution Project
 	
 	GPU Projects:
 		
