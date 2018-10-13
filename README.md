@@ -4,7 +4,7 @@ There is an [online version](http://grcquickmag.hopto.org) with limited features
 CPU_DeltaMag and GPU_DeltaMag are methods for determining the approximate performance of a given CPU/GPU on all Gridcoin whitelisted projects. These methods are a modified version of CPU_QuickMag.sh and GPU_QuickMag.sh that now use the Total
 Credit Delta (TCD) method of determining the Magnitude and GRC/day for a specified CPU or GPU.
 
-Requires: python
+Requires: python 
 
 # Steps for running code:
 
