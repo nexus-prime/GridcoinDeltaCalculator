@@ -67,9 +67,9 @@ touch $StatsOut
 
 
 #Declare projects and indexing
-declare -a iterationSF=( "0 1 2 3 4 5 6 7 8 9 10 11 12 13" ) #( "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16" )
-#ProjWithStandForm=( odlk1 srbase yafu tngrid vgtu DD numf nfs pogs universe csg cosmology lhc asteroids rosetta  yoyo wcg )
-ProjWithStandForm=( odlk1 srbase yafu tngrid vgtu numf nfs universe csg cosmology lhc rosetta  yoyo wcg )
+declare -a iterationSF=( "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14" ) #( "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17" )
+#ProjWithStandForm=( odlk1 srbase yafu tngrid vgtu DD numf nfs pogs universe csg cosmology lhc asteroids rosetta  yoyo wcg dhep)
+ProjWithStandForm=( odlk1 srbase yafu tngrid vgtu numf nfs universe csg cosmology lhc rosetta  yoyo wcg dhep)
 
 ## Get Top Rac for CPU model
 odlk1=$(cat $mypath/HostDeltaFiles/cODLK1 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
@@ -86,7 +86,7 @@ lhc=$(cat $mypath/HostDeltaFiles/cLHC 2>/dev/null | grep -i "$CPUid"| grep -o '<
 rosetta=$(cat $mypath/HostDeltaFiles/cROSETTA 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 yoyo=$(cat $mypath/HostDeltaFiles/cYOYO 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 wcg=$(cat $mypath/HostDeltaFiles/cWCG 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters )   # Temporary Issues with GDPR compliance
-
+dhep=$(cat $mypath/HostDeltaFiles/cDHEP 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters )
 
 #Check for missing data
 for project in $iterationSF
@@ -119,6 +119,7 @@ lhc=($lhc)
 rosetta=($rosetta)
 yoyo=($yoyo)
 wcg=($wcg) 
+dhep=($dhep) 
 
 
 
