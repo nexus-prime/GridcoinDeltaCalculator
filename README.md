@@ -131,7 +131,7 @@ ________________________________________________________________________________
 		
 		enigma 		Enigma@home
 		
-		pgrid 		Primegrid
+		pgrid 		Primegrig      (GDPR issues)
 		
 		einstein 	Einstein@home  (GDPR issues)
 		
