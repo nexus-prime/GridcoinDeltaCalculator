@@ -17,7 +17,7 @@
 # Requires: python
 # 
 # @author nexus-prime
-# @version 2.0.0
+# @version 2.0.1
 
 # Check for help flag
 if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
@@ -64,8 +64,8 @@ touch $StatsOut
 NumWL=$(wget -q -O- https://www.gridcoinstats.eu/project/ | grep 'Included Projects:' | grep -Eo "[0-9]+")
 
 #Declare projects and indexing
-declare -a iterationSF=( "0 1 2 3 4 5 6 7 8" )
-ProjWithStandForm=( amicable collatz enigma pgrid einstein milkyway seti gpug asteroids )
+declare -a iterationSF=( "0 1 2 3 4 5 6 7" )
+ProjWithStandForm=( amicable collatz enigma einstein milkyway seti gpug asteroids )
 
 
 
@@ -79,7 +79,6 @@ if [ -n "$nVidSearch" ]; then
 	amicable=$(cat $mypath/HostDeltaFiles/gAMICABLE | grep -i  "$GPUid" | sed -n '/CUDA*CUDA/!p;: m;//{$!{n;b m};}'| sed -n '/CAL/!p;: m;//{$!{n;b m};}'| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
 	collatz=$(cat $mypath/HostDeltaFiles/gCOLLATZ | grep -i  "$GPUid" | sed -n '/CUDA*CUDA/!p;: m;//{$!{n;b m};}'| sed -n '/CAL/!p;: m;//{$!{n;b m};}' | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
 	enigma=$(cat $mypath/HostDeltaFiles/gENIGMA | grep -i  "$GPUid" | sed -n '/CUDA*CUDA/!p;: m;//{$!{n;b m};}'| sed -n '/CAL/!p;: m;//{$!{n;b m};}'  | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
-	pgrid=$(cat $mypath/HostDeltaFiles/gPGRID | grep -i  "$GPUid" | sed -n '/CUDA*CUDA/!p;: m;//{$!{n;b m};}'| sed -n '/CAL/!p;: m;//{$!{n;b m};}'  | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
 	einstein=$(cat $mypath/HostDeltaFiles/gEINSTEIN | grep -i  "$GPUid" | sed -n '/CUDA*CUDA/!p;: m;//{$!{n;b m};}'| sed -n '/CAL/!p;: m;//{$!{n;b m};}'  | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
 	milkyway=$(cat $mypath/HostDeltaFiles/gMW | grep -i  "$GPUid" | sed -n '/CUDA*CUDA/!p;: m;//{$!{n;b m};}'| sed -n '/CAL/!p;: m;//{$!{n;b m};}' | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n  $iters) 
 	seti=$(cat $mypath/HostDeltaFiles/gSETI | grep -i  "$GPUid" | sed -n '/CUDA*CUDA/!p;: m;//{$!{n;b m};}'| sed -n '/CAL/!p;: m;//{$!{n;b m};}' | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
@@ -90,7 +89,6 @@ else
 	amicable=$(cat $mypath/HostDeltaFiles/gAMICABLE | grep -i  "$GPUid" | sed -n '/CAL*CAL/!p;: m;//{$!{n;b m};}'| sed -n '/CUDA/!p;: m;//{$!{n;b m};}' | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
 	collatz=$(cat $mypath/HostDeltaFiles/gCOLLATZ | grep -i  "$GPUid" | sed -n '/CAL*CAL/!p;: m;//{$!{n;b m};}'| sed -n '/CUDA/!p;: m;//{$!{n;b m};}'  | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
 	enigma=$(cat $mypath/HostDeltaFiles/gENIGMA | grep -i  "$GPUid" | sed -n '/CAL*CAL/!p;: m;//{$!{n;b m};}'| sed -n '/CUDA/!p;: m;//{$!{n;b m};}'  | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
-	pgrid=$(cat $mypath/HostDeltaFiles/gPGRID | grep -i  "$GPUid" | sed -n '/CAL*CAL/!p;: m;//{$!{n;b m};}'| sed -n '/CUDA/!p;: m;//{$!{n;b m};}'  | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
 	einstein=$(cat $mypath/HostDeltaFiles/gEINSTEIN | grep -i  "$GPUid" | sed -n '/CAL*CAL/!p;: m;//{$!{n;b m};}'| sed -n '/CUDA/!p;: m;//{$!{n;b m};}'  | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
 	milkyway=$(cat $mypath/HostDeltaFiles/gMW | grep -i  "$GPUid" | sed -n '/CAL*CAL/!p;: m;//{$!{n;b m};}'| sed -n '/CUDA/!p;: m;//{$!{n;b m};}'  | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n  $iters) 
 	seti=$(cat $mypath/HostDeltaFiles/gSETI | grep -i  "$GPUid" | sed -n '/CAL*CAL/!p;: m;//{$!{n;b m};}'| sed -n '/CUDA/!p;: m;//{$!{n;b m};}'  | grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters) 
@@ -117,7 +115,6 @@ unset project
 amicable=($amicable)   
 collatz=($collatz)
 enigma=($enigma)
-pgrid=($pgrid)
 einstein=($einstein) 
 milkyway=($milkyway)
 seti=($seti)

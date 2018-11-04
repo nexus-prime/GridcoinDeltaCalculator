@@ -7,7 +7,7 @@
 # [debug]			:	Can specify debug to enable progress bars
 #
 # @author nexus-prime
-# @version 2.0
+# @version 2.0.1
  
 # Respond to help flag
  if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
@@ -38,7 +38,7 @@ set -o pipefail
 		PB=''
 	 fi
   fi
- TotProj=24
+ TotProj=23
 
   # Use ripgrep if it is on the system
  if which rg 2>&1 > /dev/null ; then
@@ -145,8 +145,9 @@ sleep 1
 (wget http://milkyway.cs.rpi.edu/milkyway/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gMWhosts ; echo " " >>fin.temp )&
 (wget http://milkyway.cs.rpi.edu/milkyway/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gMWteam  )&
 
-(wget http://23.253.170.196/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gPGRIDhosts ; echo " " >>fin.temp )&
-(wget http://23.253.170.196/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gPGRIDteam )& 
+# PrimeGrid Blacklisted (04-11-2018)
+#(wget http://23.253.170.196/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gPGRIDhosts ; echo " " >>fin.temp )&
+#(wget http://23.253.170.196/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gPGRIDteam )& 
 
 (wget http://setiathome.ssl.berkeley.edu/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gSETIteam  ) &
 sleep 10
@@ -202,8 +203,6 @@ echo "gGPUG"
 (bash database2delta.sh gGPUG) 
 echo "gMW"
 (bash database2delta.sh gMW) 
-#echo "gPGRID"
-#(bash database2delta.sh gPGRID) 
 echo "gASTEROIDS"
 bash database2delta.sh gASTEROIDS
  
