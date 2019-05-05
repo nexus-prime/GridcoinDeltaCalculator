@@ -91,8 +91,8 @@ sleep 1
 (wget http://gene.disi.unitn.it/test/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/cTNGRIDhosts ; echo " " >>fin.temp )&
 (wget http://gene.disi.unitn.it/test/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/cTNGRIDteam  )&
 
-(wget https://boinc.vgtu.lt/stats/host.gz  -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/cVGTUhosts ; echo " " >>fin.temp )&
-(wget https://boinc.vgtu.lt/stats/team.gz  -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/cVGTUteam  )&
+#(wget https://boinc.vgtu.lt/stats/host.gz  -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/cVGTUhosts ; echo " " >>fin.temp )&
+#(wget https://boinc.vgtu.lt/stats/team.gz  -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/cVGTUteam  )&
 
 (wget https://escatter11.fullerton.edu/nfs/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/cNFShosts ; echo " " >>fin.temp )&
 (wget https://escatter11.fullerton.edu/nfs/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/cNFSteam  )&
@@ -133,8 +133,8 @@ sleep 1
 (wget http://boinc.thesonntags.com/collatz/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gCOLLATZhosts ; echo " " >>fin.temp )&
 (wget http://boinc.thesonntags.com/collatz/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gCOLLATZteam )& 
 
-(wget https://einsteinathome.org/stats/host_id.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gEINSTEINhosts ; echo " " >>fin.temp )&
-(wget https://einsteinathome.org/stats/team_id.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gEINSTEINteam  )&
+#(wget https://einsteinathome.org/stats/host_id.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gEINSTEINhosts ; echo " " >>fin.temp )&
+#(wget https://einsteinathome.org/stats/team_id.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gEINSTEINteam  )&
 
 (wget http://www.enigmaathome.net/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gENIGMAhosts ; echo " " >>fin.temp )&
 (wget http://www.enigmaathome.net/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gENIGMAteam  )&
@@ -216,8 +216,8 @@ echo "cYAFU"
 (bash database2delta.sh cYAFU) 
 echo "cTNGRID"
 (bash database2delta.sh cTNGRID) 
-echo "cVGTU"
-(bash database2delta.sh cVGTU) 
+#echo "cVGTU"
+#(bash database2delta.sh cVGTU) 
 echo "cNUMF"
 (bash database2delta.sh cNUMF) 
 echo "cUNIVERSE"

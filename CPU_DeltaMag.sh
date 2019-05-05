@@ -67,16 +67,16 @@ touch $StatsOut
 
 
 #Declare projects and indexing
-declare -a iterationSF=( "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14" ) #( "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17" )
+declare -a iterationSF=( "0 1 2 3 4 5 6 7 8 9 10 11 12 13" ) #( "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17" )
 #ProjWithStandForm=( odlk1 srbase yafu tngrid vgtu DD numf nfs pogs universe csg cosmology lhc asteroids rosetta  yoyo wcg dhep)
-ProjWithStandForm=( odlk1 srbase yafu tngrid vgtu numf nfs universe csg cosmology lhc rosetta  yoyo wcg dhep)
+ProjWithStandForm=( odlk1 srbase yafu tngrid numf nfs universe csg cosmology lhc rosetta  yoyo wcg dhep)
 
 ## Get Top Rac for CPU model
 odlk1=$(cat $mypath/HostDeltaFiles/cODLK1 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 srbase=$(cat $mypath/HostDeltaFiles/cSRBASE 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 yafu=$(cat $mypath/HostDeltaFiles/cYAFU 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 tngrid=$(cat $mypath/HostDeltaFiles/cTNGRID 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
-vgtu=$(cat $mypath/HostDeltaFiles/cVGTU 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
+#vgtu=$(cat $mypath/HostDeltaFiles/cVGTU 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 numf=$(cat $mypath/HostDeltaFiles/cNUMF 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 nfs=$(cat $mypath/HostDeltaFiles/cNFS 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 universe=$(cat $mypath/HostDeltaFiles/cUNIVERSE 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
@@ -108,7 +108,7 @@ odlk1=($odlk1)
 srbase=($srbase)
 yafu=($yafu)
 tngrid=($tngrid)
-vgtu=($vgtu)
+#vgtu=($vgtu)
 numf=($numf)
 nfs=($nfs)
 pogs=($pogs)
