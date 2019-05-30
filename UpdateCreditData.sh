@@ -38,7 +38,7 @@ set -o pipefail
 		PB=''
 	 fi
   fi
- TotProj=23
+ TotProj=20
 
   # Use ripgrep if it is on the system
  if which rg 2>&1 > /dev/null ; then
@@ -136,8 +136,8 @@ sleep 1
 #(wget https://einsteinathome.org/stats/host_id.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gEINSTEINhosts ; echo " " >>fin.temp )&
 #(wget https://einsteinathome.org/stats/team_id.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gEINSTEINteam  )&
 
-(wget http://www.enigmaathome.net/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gENIGMAhosts ; echo " " >>fin.temp )&
-(wget http://www.enigmaathome.net/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gENIGMAteam  )&
+#(wget http://www.enigmaathome.net/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gENIGMAhosts ; echo " " >>fin.temp )&
+#(wget http://www.enigmaathome.net/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gENIGMAteam  )&
 
 (wget https://www.gpugrid.net/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/gGPUGhosts ; echo " " >>fin.temp )&
 (wget https://www.gpugrid.net/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/gGPUGteam  )&
@@ -197,8 +197,8 @@ echo "Old data directory located, proceeding with TCD calculations..."
 echo "gCOLLATZ"
 (bash database2delta.sh gCOLLATZ) 
 #(bash database2delta.sh gEINSTEIN)
-echo "gENIGMA"
-(bash database2delta.sh gENIGMA) 
+#echo "gENIGMA"
+#(bash database2delta.sh gENIGMA) 
 echo "gGPUG"
 (bash database2delta.sh gGPUG) 
 echo "gMW"
