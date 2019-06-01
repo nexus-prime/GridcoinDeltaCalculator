@@ -20,8 +20,6 @@
 #
 # [debug]			:	Can specify debug to enable progress bars
 #
-# @author nexusgroup
-# @version 1.4
  "
   exit 0
 fi
