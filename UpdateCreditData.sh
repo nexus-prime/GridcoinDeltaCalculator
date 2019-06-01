@@ -38,7 +38,7 @@ set -o pipefail
 		PB=''
 	 fi
   fi
- TotProj=20
+ TotProj=19
 
   # Use ripgrep if it is on the system
  if which rg 2>&1 > /dev/null ; then
@@ -103,8 +103,8 @@ sleep 1
 (wget https://universeathome.pl/universe/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/cUNIVERSEhosts ; echo " " >>fin.temp )&
 (wget https://universeathome.pl/universe/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/cUNIVERSEteam  )&
 
-(wget https://csgrid.org/csg/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/cCSGhosts ; echo " " >>fin.temp )&
-(wget https://csgrid.org/csg/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/cCSGteam  )&
+#(wget https://csgrid.org/csg/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/cCSGhosts ; echo " " >>fin.temp )&
+#(wget https://csgrid.org/csg/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/cCSGteam  )&
 
 (wget https://cosmologyathome.org/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/cCOSMOLOGYhosts ; echo " " >>fin.temp )&
 (wget https://cosmologyathome.org/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip >  ./TeamFiles/cCOSMOLOGYteam )&
@@ -222,8 +222,8 @@ echo "cNUMF"
 (bash database2delta.sh cNUMF) 
 echo "cUNIVERSE"
 (bash database2delta.sh cUNIVERSE) 
-echo "cCSG"
-(bash database2delta.sh cCSG) 
+#echo "cCSG"
+#(bash database2delta.sh cCSG) 
 echo "cCOSMOLOGY"
 (bash database2delta.sh cCOSMOLOGY) 
 echo "cLHC"
