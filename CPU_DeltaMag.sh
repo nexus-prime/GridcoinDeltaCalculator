@@ -17,7 +17,7 @@
 # Requires: python and math package
 # 
 # @author nexus-prime
-# @version 2.0.1
+# @version 2.0.2
 
 # Check for help flag
 if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
@@ -67,9 +67,9 @@ touch $StatsOut
 
 
 #Declare projects and indexing
-declare -a iterationSF=( "0 1 2 3 4 5 6 7 8 9 10 11 12" ) #( "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17" )
+declare -a iterationSF=( "0 1 2 3 4 5 6 7 8 9 10 11" ) #( "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17" )
 #ProjWithStandForm=( odlk1 srbase yafu tngrid vgtu DD numf nfs pogs universe csg cosmology lhc asteroids rosetta  yoyo wcg dhep)
-ProjWithStandForm=( odlk1 srbase yafu tngrid numf nfs universe cosmology lhc rosetta  yoyo wcg dhep)
+ProjWithStandForm=( odlk1 srbase yafu tngrid numf nfs universe cosmology lhc rosetta  yoyo wcg )
 
 ## Get Top Rac for CPU model
 odlk1=$(cat $mypath/HostDeltaFiles/cODLK1 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
@@ -86,7 +86,7 @@ lhc=$(cat $mypath/HostDeltaFiles/cLHC 2>/dev/null | grep -i "$CPUid"| grep -o '<
 rosetta=$(cat $mypath/HostDeltaFiles/cROSETTA 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 yoyo=$(cat $mypath/HostDeltaFiles/cYOYO 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) 
 wcg=$(cat $mypath/HostDeltaFiles/cWCG 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters )   # Temporary Issues with GDPR compliance
-dhep=$(cat $mypath/HostDeltaFiles/cDHEP 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters )
+#dhep=$(cat $mypath/HostDeltaFiles/cDHEP 2>/dev/null | grep -i "$CPUid"| grep -o '<delta_MAG>.*</delta_MAG>'|grep -Eo "[0-9]+\.[0-9]+"| sort -rn | head -n $iters ) # Project shutdown due to lack of funding
 
 #Check for missing data
 for project in $iterationSF
@@ -119,7 +119,7 @@ lhc=($lhc)
 rosetta=($rosetta)
 yoyo=($yoyo)
 wcg=($wcg) 
-dhep=($dhep) 
+#dhep=($dhep) 
 
 
 

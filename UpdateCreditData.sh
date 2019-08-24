@@ -7,7 +7,7 @@
 # [debug]			:	Can specify debug to enable progress bars
 #
 # @author nexus-prime
-# @version 2.0.1
+# @version 2.0.2
  
 # Respond to help flag
  if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
@@ -36,7 +36,7 @@ set -o pipefail
 		PB=''
 	 fi
   fi
- TotProj=19
+ TotProj=18
 
   # Use ripgrep if it is on the system
  if which rg 2>&1 > /dev/null ; then
@@ -120,8 +120,9 @@ sleep 1
 (wget https://download.worldcommunitygrid.org/boinc/stats/host.gz -t 8 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)"> ./HostFiles/cWCGhosts ; echo " " >>fin.temp )&
 (wget https://download.worldcommunitygrid.org/boinc/stats/team.gz -t 8 $PB -q -O - -o /dev/null | gunzip > ./TeamFiles/cWCGteam  )&
 
-(wget https://www.dhep.ga/boinc/stats/host.gz -t 4 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)" > ./HostFiles/cDHEPhosts ; echo " " >>fin.temp ) &
-(wget https://www.dhep.ga/boinc/stats/team.gz -t 4 $PB -q -O - -o /dev/null | gunzip > ./TeamFiles/cDHEPteam ) &
+# Project shutdown due to lack of funding
+#(wget https://www.dhep.ga/boinc/stats/host.gz -t 4 $PB -q -O - -o /dev/null | gunzip | $grepcmde "(host|coprocs|p_model|expavg_credit|total_credit|<id>)" > ./HostFiles/cDHEPhosts ; echo " " >>fin.temp ) &
+#(wget https://www.dhep.ga/boinc/stats/team.gz -t 4 $PB -q -O - -o /dev/null | gunzip > ./TeamFiles/cDHEPteam ) &
 
 # Download New GPU Files
 
@@ -232,8 +233,8 @@ echo "cYOYO"
 (bash database2delta.sh cYOYO) 
 echo "cWCG"
 (bash database2delta.sh cWCG) 
-echo "cWCG"
-(bash database2delta.sh cDHEP) 
+#echo "cDHEP"
+#(bash database2delta.sh cDHEP) 
 
 else
 	echo "Old files missing! Cannot proceed with TCD calculations"

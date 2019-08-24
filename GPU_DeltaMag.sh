@@ -17,7 +17,7 @@
 # Requires: python
 # 
 # @author nexus-prime
-# @version 2.0.1
+# @version 2.0.2
 
 # Check for help flag
 if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
