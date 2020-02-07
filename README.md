@@ -101,8 +101,6 @@ ________________________________________________________________________________
 
 		tngrid 		Tn-grid
 
-		vgtu 		Vgtu Project@home
-
 		numf 		Numberfields@home
 		
 		nfs 		Nfs@home
@@ -114,14 +112,13 @@ ________________________________________________________________________________
 		cosmology 	Cosmology@home
 
 		lhc		Lhc@home Classic
-		
+
 		rosetta  	Rosetta@home
 
 		yoyo 		Yoyo@home
 
 		wcg		World Community Grid 
 		
-		dhep		Distributed Hardware Evolution Project
 	
 	GPU Projects:
 		
@@ -129,14 +126,12 @@ ________________________________________________________________________________
 		
 		collatz 	Collatz Conjecture
 		
-		enigma 		Enigma@home
-		
-		einstein 	Einstein@home  (GDPR issues)
+		einstein 	Einstein@home  	(No stats available - GDPR)
 		
 		milkyway 	Milkyway@home
 		
 		seti 		Seti@home
 		
 		gpug		GPUgrid
-
+		
 		asteroids 	Asteroids@home
