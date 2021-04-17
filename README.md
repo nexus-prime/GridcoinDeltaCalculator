@@ -1,3 +1,7 @@
+#Gridcoin Delta Calculator is in the process of being rewritten from scratch. The version here is not currently being updated.
+
+
+
 There is an [online version](http://quickmag.ml) with limited features
 
 
