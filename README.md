@@ -1,4 +1,4 @@
-# Gridcoin Delta Calculator is in the process of being rewritten from scratch. This version is not currently being updated. Use https://github.com/nexus-prime/QuickMag instead
+# Gridcoin Delta Calculator is in the process of being rewritten from scratch. This version is not currently being updated. In the meantime you can use http://www.quickmag.ml instead
 
 
 
